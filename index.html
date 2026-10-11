@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To MONO 🤍</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #141414;
+    overflow: hidden;
+  }
+
+  #text {
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    background-image: url(baby.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-image: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url(baby.jpg);
+  }
+</style>
+</head>
+<body>
+
+<div id="text">Before I met you, I was convinced that my heart was nothing more than a stagnant pool. The burial place of a fallen moon... a withered, windless grove where the waters rested forever unrippled. It was you who helped me see that my heart hadn't entirely withered away. That it could still beat to the rhythm of love.</div>
+
+<script>
+  const el = document.getElementById('text');
+  const original = el.textContent.trim();
+
+  function fill() {
+    el.textContent = original;
+
+    let guard = 0;
+    while (el.offsetHeight < window.innerHeight && guard < 300) {
+      el.textContent += ' ' + original;
+      guard++;
+    }
+  }
+
+  fill();
+  window.addEventListener('resize', fill);
+</script>
+
+</body>
+</html>
